@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors"); // Import cors package
 
 const app = express();
 
@@ -9,6 +10,7 @@ const auctionRoutes = require("./routes/auctions");
 
 // App middleware
 app.use(bodyParser.json());
+app.use(cors()); // Use cors middleware
 
 // Route middleware
 app.use(auctionRoutes);
